@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        let splashNC  = UINavigationController(rootViewController:HomeViewController())
+        let splashNC  = UINavigationController(rootViewController:NotesListVC())
         splashNC.navigationBar.backgroundColor  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         splashNC.navigationBar.barTintColor = UIColor.white
         let navigationBar = splashNC.navigationBar

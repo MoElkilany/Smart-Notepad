@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NotesListVC.swift
 //  Smart Notepad
 //
 //  Created by Mohamed Elkilany on 04/06/2021.
@@ -7,8 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+class NotesListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
@@ -17,4 +16,3 @@ class HomeViewController: UIViewController {
 
 
 }
-

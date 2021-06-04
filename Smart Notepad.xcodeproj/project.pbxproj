@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		104DCF07266ABBF900B85088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF06266ABBF900B85088 /* AppDelegate.swift */; };
 		104DCF09266ABBF900B85088 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF08266ABBF900B85088 /* SceneDelegate.swift */; };
-		104DCF0B266ABBF900B85088 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF0A266ABBF900B85088 /* HomeViewController.swift */; };
 		104DCF10266ABBFA00B85088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 104DCF0F266ABBFA00B85088 /* Assets.xcassets */; };
 		104DCF13266ABBFA00B85088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104DCF11266ABBFA00B85088 /* LaunchScreen.storyboard */; };
+		104DCF2B266AC72D00B85088 /* NotesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF29266AC72D00B85088 /* NotesListVC.swift */; };
+		104DCF2C266AC72D00B85088 /* NotesListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104DCF2A266AC72D00B85088 /* NotesListVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		104DCF03266ABBF900B85088 /* Smart Notepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Notepad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		104DCF06266ABBF900B85088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		104DCF08266ABBF900B85088 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		104DCF0A266ABBF900B85088 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		104DCF0F266ABBFA00B85088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		104DCF12266ABBFA00B85088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		104DCF14266ABBFA00B85088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		104DCF29266AC72D00B85088 /* NotesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListVC.swift; sourceTree = "<group>"; };
+		104DCF2A266AC72D00B85088 /* NotesListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesListVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +93,7 @@
 		104DCF23266AC3CA00B85088 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				104DCF0A266ABBF900B85088 /* HomeViewController.swift */,
+				104DCF28266AC6FE00B85088 /* NotesList */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -102,6 +104,15 @@
 				104DCF11266ABBFA00B85088 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		104DCF28266AC6FE00B85088 /* NotesList */ = {
+			isa = PBXGroup;
+			children = (
+				104DCF29266AC72D00B85088 /* NotesListVC.swift */,
+				104DCF2A266AC72D00B85088 /* NotesListVC.xib */,
+			);
+			path = NotesList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				104DCF13266ABBFA00B85088 /* LaunchScreen.storyboard in Resources */,
+				104DCF2C266AC72D00B85088 /* NotesListVC.xib in Resources */,
 				104DCF10266ABBFA00B85088 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,8 +185,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				104DCF0B266ABBF900B85088 /* HomeViewController.swift in Sources */,
 				104DCF07266ABBF900B85088 /* AppDelegate.swift in Sources */,
+				104DCF2B266AC72D00B85088 /* NotesListVC.swift in Sources */,
 				104DCF09266ABBF900B85088 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
