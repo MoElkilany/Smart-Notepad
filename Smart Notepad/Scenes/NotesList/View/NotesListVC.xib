@@ -52,6 +52,7 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r7Q-gO-mVL">
                     <rect key="frame" x="16" y="44" width="382" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -69,6 +70,7 @@
             <connections>
                 <outlet property="addNoteBtn" destination="gBS-Hg-M9I" id="G92-E0-lxD"/>
                 <outlet property="addNoteStack" destination="Rtb-dQ-E0P" id="ec3-XY-Aww"/>
+                <outlet property="myNotesTable" destination="r7Q-gO-mVL" id="dOy-3f-tRh"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="108.48214285714285"/>
         </view>

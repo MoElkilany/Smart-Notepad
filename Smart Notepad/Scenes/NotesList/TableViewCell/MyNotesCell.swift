@@ -11,15 +11,13 @@ class MyNotesCell: UITableViewCell {
 
     static let cellID = "MyNotesCell"
     
-    @IBOutlet fileprivate weak var noteTitleLab: UILabel!
-    @IBOutlet fileprivate weak var noteBodyLab: UILabel!
-    @IBOutlet fileprivate weak var nearestLab: UILabel!
+    @IBOutlet fileprivate  weak var noteTitleLab: UILabel!
+    @IBOutlet fileprivate  weak var noteBodyLab: UILabel!
+    @IBOutlet fileprivate  weak var nearestLab: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
     }
-    
-    
     
 }
