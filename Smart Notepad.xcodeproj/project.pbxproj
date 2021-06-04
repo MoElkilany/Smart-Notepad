@@ -13,6 +13,7 @@
 		104DCF13266ABBFA00B85088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104DCF11266ABBFA00B85088 /* LaunchScreen.storyboard */; };
 		104DCF2B266AC72D00B85088 /* NotesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF29266AC72D00B85088 /* NotesListVC.swift */; };
 		104DCF2C266AC72D00B85088 /* NotesListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104DCF2A266AC72D00B85088 /* NotesListVC.xib */; };
+		104DCF34266AC80900B85088 /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF33266AC80900B85088 /* NotesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		104DCF14266ABBFA00B85088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		104DCF29266AC72D00B85088 /* NotesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListVC.swift; sourceTree = "<group>"; };
 		104DCF2A266AC72D00B85088 /* NotesListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesListVC.xib; sourceTree = "<group>"; };
+		104DCF33266AC80900B85088 /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +111,35 @@
 		104DCF28266AC6FE00B85088 /* NotesList */ = {
 			isa = PBXGroup;
 			children = (
-				104DCF29266AC72D00B85088 /* NotesListVC.swift */,
-				104DCF2A266AC72D00B85088 /* NotesListVC.xib */,
+				104DCF32266AC7EE00B85088 /* Controller */,
+				104DCF31266AC7E900B85088 /* View */,
+				104DCF30266AC7E300B85088 /* Model */,
 			);
 			path = NotesList;
+			sourceTree = "<group>";
+		};
+		104DCF30266AC7E300B85088 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		104DCF31266AC7E900B85088 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				104DCF2A266AC72D00B85088 /* NotesListVC.xib */,
+				104DCF33266AC80900B85088 /* NotesListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		104DCF32266AC7EE00B85088 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				104DCF29266AC72D00B85088 /* NotesListVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +214,7 @@
 			files = (
 				104DCF07266ABBF900B85088 /* AppDelegate.swift in Sources */,
 				104DCF2B266AC72D00B85088 /* NotesListVC.swift in Sources */,
+				104DCF34266AC80900B85088 /* NotesListView.swift in Sources */,
 				104DCF09266ABBF900B85088 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
