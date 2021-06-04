@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		104DCF07266ABBF900B85088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF06266ABBF900B85088 /* AppDelegate.swift */; };
 		104DCF09266ABBF900B85088 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF08266ABBF900B85088 /* SceneDelegate.swift */; };
-		104DCF0B266ABBF900B85088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF0A266ABBF900B85088 /* ViewController.swift */; };
-		104DCF0E266ABBF900B85088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104DCF0C266ABBF900B85088 /* Main.storyboard */; };
+		104DCF0B266ABBF900B85088 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF0A266ABBF900B85088 /* HomeViewController.swift */; };
 		104DCF10266ABBFA00B85088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 104DCF0F266ABBFA00B85088 /* Assets.xcassets */; };
 		104DCF13266ABBFA00B85088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104DCF11266ABBFA00B85088 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,8 +18,7 @@
 		104DCF03266ABBF900B85088 /* Smart Notepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Notepad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		104DCF06266ABBF900B85088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		104DCF08266ABBF900B85088 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		104DCF0A266ABBF900B85088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		104DCF0D266ABBF900B85088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		104DCF0A266ABBF900B85088 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		104DCF0F266ABBFA00B85088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		104DCF12266ABBFA00B85088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		104DCF14266ABBFA00B85088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +54,54 @@
 		104DCF05266ABBF900B85088 /* Smart Notepad */ = {
 			isa = PBXGroup;
 			children = (
-				104DCF06266ABBF900B85088 /* AppDelegate.swift */,
-				104DCF08266ABBF900B85088 /* SceneDelegate.swift */,
-				104DCF0A266ABBF900B85088 /* ViewController.swift */,
-				104DCF0C266ABBF900B85088 /* Main.storyboard */,
-				104DCF0F266ABBFA00B85088 /* Assets.xcassets */,
-				104DCF11266ABBFA00B85088 /* LaunchScreen.storyboard */,
-				104DCF14266ABBFA00B85088 /* Info.plist */,
+				104DCF24266AC3D100B85088 /* Storyboards */,
+				104DCF23266AC3CA00B85088 /* Scenes */,
+				104DCF22266AC3C400B85088 /* Resources */,
+				104DCF21266AC3BD00B85088 /* InfoList */,
+				104DCF20266AC3B700B85088 /* Core */,
 			);
 			path = "Smart Notepad";
+			sourceTree = "<group>";
+		};
+		104DCF20266AC3B700B85088 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				104DCF06266ABBF900B85088 /* AppDelegate.swift */,
+				104DCF08266ABBF900B85088 /* SceneDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		104DCF21266AC3BD00B85088 /* InfoList */ = {
+			isa = PBXGroup;
+			children = (
+				104DCF14266ABBFA00B85088 /* Info.plist */,
+			);
+			path = InfoList;
+			sourceTree = "<group>";
+		};
+		104DCF22266AC3C400B85088 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				104DCF0F266ABBFA00B85088 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		104DCF23266AC3CA00B85088 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				104DCF0A266ABBF900B85088 /* HomeViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		104DCF24266AC3D100B85088 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				104DCF11266ABBFA00B85088 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +163,6 @@
 			files = (
 				104DCF13266ABBFA00B85088 /* LaunchScreen.storyboard in Resources */,
 				104DCF10266ABBFA00B85088 /* Assets.xcassets in Resources */,
-				104DCF0E266ABBF900B85088 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				104DCF0B266ABBF900B85088 /* ViewController.swift in Sources */,
+				104DCF0B266ABBF900B85088 /* HomeViewController.swift in Sources */,
 				104DCF07266ABBF900B85088 /* AppDelegate.swift in Sources */,
 				104DCF09266ABBF900B85088 /* SceneDelegate.swift in Sources */,
 			);
@@ -146,14 +182,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		104DCF0C266ABBF900B85088 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				104DCF0D266ABBF900B85088 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		104DCF11266ABBFA00B85088 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +316,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZUMG9R88LL;
-				INFOPLIST_FILE = "Smart Notepad/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Smart Notepad/InfoList/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +325,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Koinz.Smart-Notepad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,7 +336,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZUMG9R88LL;
-				INFOPLIST_FILE = "Smart Notepad/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Smart Notepad/InfoList/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +345,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Koinz.Smart-Notepad";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
