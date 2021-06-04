@@ -8,11 +8,15 @@
 import UIKit
 
 class NotesListVC: UIViewController {
+    
+    var mainView :NotesListView {
+        return view as! NotesListView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
-        title = "HOME"
+        viewDidLoadActivity()
+        title = "Notes"
     }
-
 
 }

@@ -17,28 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
         let splashNC  = UINavigationController(rootViewController:NotesListVC())
-        splashNC.navigationBar.backgroundColor  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        splashNC.navigationBar.barTintColor = UIColor.white
-        let navigationBar = splashNC.navigationBar
-        navigationBar.setBackgroundImage(UIImage(named: ""),for: .default)
-        navigationBar.shadowImage = UIImage()
         window.rootViewController = splashNC
         window.makeKeyAndVisible()
-        
         self.window = window
-      /*
-         splashNC.navigationBar.backgroundColor  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-         splashNC.navigationBar.barTintColor = UIColor.white
-         let navigationBar = splashNC.navigationBar
-         navigationBar.setBackgroundImage(UIImage(named: ""),for: .default)
-         navigationBar.shadowImage = UIImage()
-        window  = UIWindow(frame: UIScreen.main.bounds)
 
-         window?.rootViewController = splashNC
-         
-         */
-       
-        
         return true
     }
 

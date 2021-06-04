@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1041B9A1266ACB2D00E092CE /* NotesListVC+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041B9A0266ACB2D00E092CE /* NotesListVC+Function.swift */; };
 		104DCF07266ABBF900B85088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF06266ABBF900B85088 /* AppDelegate.swift */; };
 		104DCF09266ABBF900B85088 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF08266ABBF900B85088 /* SceneDelegate.swift */; };
 		104DCF10266ABBFA00B85088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 104DCF0F266ABBFA00B85088 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1041B9A0266ACB2D00E092CE /* NotesListVC+Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesListVC+Function.swift"; sourceTree = "<group>"; };
 		104DCF03266ABBF900B85088 /* Smart Notepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Notepad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		104DCF06266ABBF900B85088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		104DCF08266ABBF900B85088 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,16 +115,8 @@
 			children = (
 				104DCF32266AC7EE00B85088 /* Controller */,
 				104DCF31266AC7E900B85088 /* View */,
-				104DCF30266AC7E300B85088 /* Model */,
 			);
 			path = NotesList;
-			sourceTree = "<group>";
-		};
-		104DCF30266AC7E300B85088 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		104DCF31266AC7E900B85088 /* View */ = {
@@ -138,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				104DCF29266AC72D00B85088 /* NotesListVC.swift */,
+				1041B9A0266ACB2D00E092CE /* NotesListVC+Function.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				104DCF07266ABBF900B85088 /* AppDelegate.swift in Sources */,
+				1041B9A1266ACB2D00E092CE /* NotesListVC+Function.swift in Sources */,
 				104DCF2B266AC72D00B85088 /* NotesListVC.swift in Sources */,
 				104DCF34266AC80900B85088 /* NotesListView.swift in Sources */,
 				104DCF09266ABBF900B85088 /* SceneDelegate.swift in Sources */,

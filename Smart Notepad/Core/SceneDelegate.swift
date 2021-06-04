@@ -17,11 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene  = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let splashNC  = UINavigationController(rootViewController:NotesListVC())
-        splashNC.navigationBar.backgroundColor  = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        splashNC.navigationBar.barTintColor = UIColor.white
-        let navigationBar = splashNC.navigationBar
-        navigationBar.setBackgroundImage(UIImage(named: ""),for: .default)
-        navigationBar.shadowImage = UIImage()
         window.rootViewController = splashNC
          window.makeKeyAndVisible()
         self.window = window
