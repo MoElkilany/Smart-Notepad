@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1041B9A1266ACB2D00E092CE /* NotesListVC+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041B9A0266ACB2D00E092CE /* NotesListVC+Function.swift */; };
+		1041B9A9266AD54F00E092CE /* MyNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041B9A7266AD54F00E092CE /* MyNotesCell.swift */; };
+		1041B9AA266AD54F00E092CE /* MyNotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1041B9A8266AD54F00E092CE /* MyNotesCell.xib */; };
 		104DCF07266ABBF900B85088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF06266ABBF900B85088 /* AppDelegate.swift */; };
 		104DCF09266ABBF900B85088 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF08266ABBF900B85088 /* SceneDelegate.swift */; };
 		104DCF10266ABBFA00B85088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 104DCF0F266ABBFA00B85088 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		1041B9A0266ACB2D00E092CE /* NotesListVC+Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesListVC+Function.swift"; sourceTree = "<group>"; };
+		1041B9A7266AD54F00E092CE /* MyNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesCell.swift; sourceTree = "<group>"; };
+		1041B9A8266AD54F00E092CE /* MyNotesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyNotesCell.xib; sourceTree = "<group>"; };
 		104DCF03266ABBF900B85088 /* Smart Notepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Notepad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		104DCF06266ABBF900B85088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		104DCF08266ABBF900B85088 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1041B9A6266AD45200E092CE /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1041B9A7266AD54F00E092CE /* MyNotesCell.swift */,
+				1041B9A8266AD54F00E092CE /* MyNotesCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		104DCEFA266ABBF900B85088 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,7 @@
 		104DCF28266AC6FE00B85088 /* NotesList */ = {
 			isa = PBXGroup;
 			children = (
+				1041B9A6266AD45200E092CE /* TableViewCell */,
 				104DCF32266AC7EE00B85088 /* Controller */,
 				104DCF31266AC7E900B85088 /* View */,
 			);
@@ -197,6 +211,7 @@
 				104DCF13266ABBFA00B85088 /* LaunchScreen.storyboard in Resources */,
 				104DCF2C266AC72D00B85088 /* NotesListVC.xib in Resources */,
 				104DCF10266ABBFA00B85088 /* Assets.xcassets in Resources */,
+				1041B9AA266AD54F00E092CE /* MyNotesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				104DCF07266ABBF900B85088 /* AppDelegate.swift in Sources */,
+				1041B9A9266AD54F00E092CE /* MyNotesCell.swift in Sources */,
 				1041B9A1266ACB2D00E092CE /* NotesListVC+Function.swift in Sources */,
 				104DCF2B266AC72D00B85088 /* NotesListVC.swift in Sources */,
 				104DCF34266AC80900B85088 /* NotesListView.swift in Sources */,

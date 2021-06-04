@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="KGk-i7-Jjw" customClass="MyNotesCell" customModule="Smart_Notepad" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="phC-nh-5Zo">
+                        <rect key="frame" x="12" y="8" width="238" height="71"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="Pe5-Y0-9vt">
+                                <rect key="frame" x="0.0" y="0.0" width="220" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJW-l8-gmI">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjD-ue-UD6">
+                                        <rect key="frame" x="160" y="0.0" width="60" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemPinkColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note body" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Iee-g1-hNy">
+                                <rect key="frame" x="0.0" y="20.5" width="79.5" height="50.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="cUa-ua-si6">
+                        <rect key="frame" x="262" y="8" width="50" height="20"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-place-marker-64" translatesAutoresizingMaskIntoConstraints="NO" id="K5x-Eh-Fuh">
+                                <rect key="frame" x="0.0" y="0.0" width="22" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="GgW-8C-f6o"/>
+                                    <constraint firstAttribute="height" constant="20" id="ybh-9f-GTS"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-image-48" translatesAutoresizingMaskIntoConstraints="NO" id="bFA-cs-zIQ">
+                                <rect key="frame" x="28" y="0.0" width="22" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="58r-4m-1hj"/>
+                                    <constraint firstAttribute="height" constant="20" id="dRs-XE-1CH"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cUa-ua-si6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="1jI-4A-crq"/>
+                    <constraint firstAttribute="bottom" secondItem="phC-nh-5Zo" secondAttribute="bottom" constant="12" id="468-Em-EEG"/>
+                    <constraint firstAttribute="trailing" secondItem="cUa-ua-si6" secondAttribute="trailing" constant="8" id="JqN-up-E3d"/>
+                    <constraint firstItem="phC-nh-5Zo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="TuV-lk-9hf"/>
+                    <constraint firstItem="phC-nh-5Zo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="rFI-4Q-GVI"/>
+                    <constraint firstItem="cUa-ua-si6" firstAttribute="leading" secondItem="phC-nh-5Zo" secondAttribute="trailing" constant="12" id="rrq-1h-BL7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="nearestLab" destination="gjD-ue-UD6" id="Rmt-Cw-NIO"/>
+                <outlet property="noteBodyLab" destination="Iee-g1-hNy" id="mxf-fu-mIL"/>
+                <outlet property="noteTitleLab" destination="hJW-l8-gmI" id="41W-99-Mtz"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="149.66517857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icons8-image-48" width="16" height="16"/>
+        <image name="icons8-place-marker-64" width="21.5" height="21.5"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
