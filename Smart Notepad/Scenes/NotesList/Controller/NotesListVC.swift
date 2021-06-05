@@ -6,8 +6,15 @@
 //
 
 import UIKit
+import CoreLocation
 
 class NotesListVC: UIViewController {
+    
+    let locationManager = CLLocationManager()
+    
+    var lat = 0.0
+    var lng = 0.0
+    
     
     var mainView :NotesListView {
         return view as! NotesListView
@@ -18,5 +25,11 @@ class NotesListVC: UIViewController {
         viewDidLoadActivity()
         title = "Notes"
     }
-
+    
+//    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//    
+//       
+//    }
 }

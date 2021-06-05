@@ -16,6 +16,11 @@ extension NotesListVC {
     }
     
     func setUpView(){
+        locationAuthorization()
+        
+     
+        
+        
         mainView.addNoteBtn.layer.cornerRadius = 10
         mainView.addNoteBtn.layer.borderWidth = 1
         mainView.addNoteBtn.layer.borderColor = UIColor.black.cgColor
@@ -28,53 +33,28 @@ extension NotesListVC {
         mainView.myNotesTable.showsVerticalScrollIndicator = false
         mainView.myNotesTable.showsHorizontalScrollIndicator = false
     }
-
+    
+    func locationAuthorization(){
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+    }
     
 }
 
-extension NotesListVC: UITableViewDelegate , UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+
+
+extension NotesListVC : CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(location.latitude) \(location.longitude)")
+
+        self.lat = location.latitude
+        self.lng = location.longitude
+        self.locationManager.startUpdatingLocation()
     }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MyNotesCell.cellID, for: indexPath) as!  MyNotesCell
-        
-        return cell
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteItem = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
-            print("delete")
-        }
-        
-        
-        let editItem = UIContextualAction(style: .normal, title: "Edit") {  (contextualAction, view, boolValue) in
-            view.backgroundColor = .blue
-            contextualAction.backgroundColor = .blue
-            
-            print("edit")
-        }
-        
-        
-        let swipeActions = UISwipeActionsConfiguration(actions: [deleteItem,editItem])
-        
-        return swipeActions
-    }
-    
-    
-    
     
 }

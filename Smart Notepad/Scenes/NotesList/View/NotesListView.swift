@@ -12,5 +12,4 @@ class NotesListView: UIView {
     @IBOutlet weak var addNoteStack: UIStackView!
     @IBOutlet weak var addNoteBtn: UIButton!
     @IBOutlet weak var myNotesTable: UITableView!
-    
 }
