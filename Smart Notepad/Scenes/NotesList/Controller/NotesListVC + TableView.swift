@@ -59,4 +59,11 @@ extension NotesListVC: UITableViewDelegate , UITableViewDataSource {
         let swipeActions = UISwipeActionsConfiguration(actions: [deleteItem,editItem])
         return swipeActions
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = NoteDetailsVC()
+        vc.noteDetails = self.myNotes[indexPath.item]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
