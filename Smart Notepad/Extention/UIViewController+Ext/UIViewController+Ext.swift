@@ -10,7 +10,7 @@ import UIKit
 extension UIViewController {
     
     func showLocationPermissionAlert() {
-            let controller = UIAlertController(title: "Location Permission", message: "Please  active location to get your current location", preferredStyle: .alert)
+            let controller = UIAlertController(title: "Location Permission", message: "Please active your location from Settings ", preferredStyle: .alert)
         
             let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: {(cAlertAction) in
                 UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!)
