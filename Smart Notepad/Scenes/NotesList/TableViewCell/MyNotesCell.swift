@@ -18,6 +18,13 @@ class MyNotesCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
+        nearestLab.isHidden = true
+    }
+    
+    func setUpCellData(model:NotesModel){
+        noteTitleLab.text = model.noteTitle
+        noteBodyLab.text = model.noteBody
+//        noteTitleLab.text = model.noteTitle
     }
     
 }

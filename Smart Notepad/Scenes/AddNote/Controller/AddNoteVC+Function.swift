@@ -19,8 +19,6 @@ extension AddNoteVC{
         getCurrentTime()
     }
     
-    
-    
     func setUpView(){
         mainView.addPhotoBtn.isHidden = false
         mainView.imageSelected.isHidden = true
@@ -41,6 +39,7 @@ extension AddNoteVC{
     @objc func addNoteBtnTapped(){
       let validFields = validationTextFieldWhenAddingNot()
         if validFields {
+            setNoteData()
             print( "done")
         }
     }
@@ -65,10 +64,9 @@ extension AddNoteVC{
         
         
         return true
-        
     }
 
-
+    
     @objc func addLocationBtnTapped(){
         if !userLocationPermission() {
             self.showPermissionAlert(title: "Location Permission", message: "Please active your location from Settings ")
@@ -146,9 +144,24 @@ extension AddNoteVC{
         let date = dateFormatter.date(from:dateString)!
         print("noteTime",date)
         self.noteTime =  date
- 
     }
     
+    
+    func setNoteData(){
+
+        let myNotes = NotesModel()
+        myNotes.address = self.fullAddress
+        myNotes.currentLat = self.lat
+        myNotes.currentLng = self.lng
+        myNotes.noteBody = mainView.noteDescriptionTV.text ?? "note Body"
+        myNotes.noteTitle = mainView.noteTitleLab.text ?? "note Title"
+        myNotes.noteTime = self.noteTime
+        myNotes.notePhoto = ""
+        realm.beginWrite()
+        realm.add(myNotes)
+        try! realm.commitWrite()
+
+    }
     
     
 }

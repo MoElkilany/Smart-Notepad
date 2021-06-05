@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
 class AddNoteVC: UIViewController {
 
@@ -19,6 +20,7 @@ class AddNoteVC: UIViewController {
     var isUserAccessPhoto = true
     let currentTime = Date()
     var  noteTime = Date()
+    let realm = try! Realm()
 
         var mainView: AddNoteView {
         return view as! AddNoteView

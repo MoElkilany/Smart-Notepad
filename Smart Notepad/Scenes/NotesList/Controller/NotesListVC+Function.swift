@@ -19,6 +19,22 @@ extension NotesListVC {
         
     }
     
+    
+func getMyNotesFromRealmData(){
+    do {
+        myNotes =  realm.objects(NotesModel.self)
+        mainView.myNotesTable.reloadData()
+        if myNotes.isEmpty {
+            mainView.addNoteStack.isHidden = false
+            mainView.myNotesTable.isHidden = true
+        }else{
+            mainView.addNoteStack.isHidden = true
+            mainView.myNotesTable.isHidden = false
+        }
+    }
+}
+    
+    
     func setUpView(){
        
         mainView.addNoteBtn.layer.cornerRadius = 10
