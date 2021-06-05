@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
 class NotesListVC: UIViewController {
     
@@ -14,6 +15,7 @@ class NotesListVC: UIViewController {
     
     var lat = 0.0
     var lng = 0.0
+    let realm = try! Realm()
     
     var mainView :NotesListView {
         return view as! NotesListView
@@ -21,6 +23,7 @@ class NotesListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Realm File" , Realm.Configuration.defaultConfiguration.fileURL!)
         viewDidLoadActivity()
         title = "Notes"
     }

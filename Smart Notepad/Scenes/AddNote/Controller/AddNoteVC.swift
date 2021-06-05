@@ -17,7 +17,9 @@ class AddNoteVC: UIViewController {
     var lng = 0.0
     var fullAddress = ""
     var isUserAccessPhoto = true
-    
+    let currentTime = Date()
+    var  noteTime = Date()
+
         var mainView: AddNoteView {
         return view as! AddNoteView
     }

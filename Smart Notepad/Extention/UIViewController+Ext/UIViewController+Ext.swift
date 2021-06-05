@@ -35,13 +35,13 @@ extension UIViewController {
     func showAlert(title:String , message:String) {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: {(_) in
-            self.dismiss(animated: true, completion: nil)
-        })
+//        let okAction = UIAlertAction(title: "Ok", style: .default, handler: {(_) in
+//            self.dismiss(animated: true, completion: nil)
+//        })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: "Ok", style: .cancel)
         controller.addAction(cancelAction)
-        controller.addAction(okAction)
+//        controller.addAction(okAction)
         self.present(controller, animated: true, completion: nil)
     }
     

@@ -16,28 +16,9 @@ extension AddNoteVC{
         actionButton()
         photoAccess()
         locationAuthorization()
+        getCurrentTime()
     }
     
-    func photoAccess(){
-        PHPhotoLibrary.requestAuthorization(for: .readWrite) { [unowned self] (Authorization) in
-            DispatchQueue.main.async { [unowned self] in
-                userPhotoAuthorization(Authorization)
-            }
-        }
-    }
-    
-    func userPhotoAuthorization(_ Authorization: PHAuthorizationStatus) {
-        switch Authorization {
-        case .authorized:
-         print("authorized")
-            isUserAccessPhoto = true
-        case .denied,.restricted,.notDetermined:
-            print("denied")
-            isUserAccessPhoto = false
-         default:
-            break
-        }
-    }
     
     
     func setUpView(){
@@ -55,17 +36,40 @@ extension AddNoteVC{
         mainView.addNoteBtn.addTarget(self, action: #selector(addNoteBtnTapped), for: .touchUpInside)
         mainView.addLocationBtn.addTarget(self, action: #selector(addLocationBtnTapped), for: .touchUpInside)
         mainView.addPhotoBtn.addTarget(self, action: #selector(addPhotoBtnTapped), for: .touchUpInside)
-        
     }
     
     @objc func addNoteBtnTapped(){
-      
+      let validFields = validationTextFieldWhenAddingNot()
+        if validFields {
+            print( "done")
+        }
+    }
+    
+    func validationTextFieldWhenAddingNot()->Bool{
+        guard !mainView.noteTitleLab.text!.isEmpty  else {
+            self.showAlert(title: "Title note is Empty ❌", message: "Please enter the title of note")
+            return false
+        }
+        
+        
+        if  mainView.noteDescriptionTV.text == "Note Body Here"  {
+            self.showAlert(title: "Body note is Empty ❌", message: "Please enter the Body of note")
+            return false
+        }
+        
+        
+        if  mainView.addLocationBtn.currentTitle == "Add location"  {
+            self.showAlert(title: "Please Choose your Loaction  ❌", message: "")
+            return false
+        }
+        
+        
+        return true
         
     }
 
 
     @objc func addLocationBtnTapped(){
-     
         if !userLocationPermission() {
             self.showPermissionAlert(title: "Location Permission", message: "Please active your location from Settings ")
         }else{
@@ -80,11 +84,10 @@ extension AddNoteVC{
 
         }else{
             Helper.chosseOptionAlert(imagePicker: pickerImage, vc: self)
-
         }
     }
     
-    
+    //MARK:Location Permission
     func userLocationPermission()->Bool  {
         var userAcceptPermission = false
         if CLLocationManager.locationServicesEnabled() {
@@ -111,6 +114,42 @@ extension AddNoteVC{
             locationManager.startUpdatingLocation()
         }
     }
+    
+    //MARK:photo Access Permission
+    func photoAccess(){
+        PHPhotoLibrary.requestAuthorization(for: .readWrite) { [unowned self] (Authorization) in
+            DispatchQueue.main.async { [unowned self] in
+                userPhotoAuthorization(Authorization)
+            }
+        }
+    }
+    
+    func userPhotoAuthorization(_ Authorization: PHAuthorizationStatus) {
+        switch Authorization {
+        case .authorized:
+         print("authorized")
+            isUserAccessPhoto = true
+        case .denied,.restricted,.notDetermined:
+            print("denied")
+            isUserAccessPhoto = false
+         default:
+            break
+        }
+    }
+    
+    func getCurrentTime(){
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.dateFormat = "HH:mm:ss"
+        let dateString = dateFormatter.string(from: currentTime)
+        print("dateString",dateString)
+        let date = dateFormatter.date(from:dateString)!
+        print("noteTime",date)
+        self.noteTime =  date
+ 
+    }
+    
+    
     
 }
     
@@ -151,7 +190,7 @@ extension AddNoteVC : CLLocationManagerDelegate {
     
     func reverseGeocodeLocation(_ location: CLLocation) {
         
-        let locale = Locale(identifier: "ar")
+        let locale = Locale(identifier: "en")
         
         CLGeocoder().reverseGeocodeLocation(location, preferredLocale: locale) { placemarks, error in
             if let placemark = placemarks?.first {
