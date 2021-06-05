@@ -10,6 +10,7 @@
 		1041B9A1266ACB2D00E092CE /* NotesListVC+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041B9A0266ACB2D00E092CE /* NotesListVC+Function.swift */; };
 		1041B9A9266AD54F00E092CE /* MyNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041B9A7266AD54F00E092CE /* MyNotesCell.swift */; };
 		1041B9AA266AD54F00E092CE /* MyNotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1041B9A8266AD54F00E092CE /* MyNotesCell.xib */; };
+		1041B9DB266AF79F00E092CE /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041B9DA266AF79F00E092CE /* UIViewController+Ext.swift */; };
 		104DCF07266ABBF900B85088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF06266ABBF900B85088 /* AppDelegate.swift */; };
 		104DCF09266ABBF900B85088 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF08266ABBF900B85088 /* SceneDelegate.swift */; };
 		104DCF10266ABBFA00B85088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 104DCF0F266ABBFA00B85088 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		1041B9A0266ACB2D00E092CE /* NotesListVC+Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesListVC+Function.swift"; sourceTree = "<group>"; };
 		1041B9A7266AD54F00E092CE /* MyNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesCell.swift; sourceTree = "<group>"; };
 		1041B9A8266AD54F00E092CE /* MyNotesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyNotesCell.xib; sourceTree = "<group>"; };
+		1041B9DA266AF79F00E092CE /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		104DCF03266ABBF900B85088 /* Smart Notepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Notepad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		104DCF06266ABBF900B85088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		104DCF08266ABBF900B85088 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,29 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
+		1041B9D1266AF6E700E092CE /* CustomeView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomeView;
+			sourceTree = "<group>";
+		};
+		1041B9D8266AF75700E092CE /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				1041B9D9266AF76000E092CE /* UIViewController+Ext */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		1041B9D9266AF76000E092CE /* UIViewController+Ext */ = {
+			isa = PBXGroup;
+			children = (
+				1041B9DA266AF79F00E092CE /* UIViewController+Ext.swift */,
+			);
+			path = "UIViewController+Ext";
+			sourceTree = "<group>";
+		};
 		104DCEFA266ABBF900B85088 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +98,8 @@
 		104DCF05266ABBF900B85088 /* Smart Notepad */ = {
 			isa = PBXGroup;
 			children = (
+				1041B9D8266AF75700E092CE /* Extention */,
+				1041B9D1266AF6E700E092CE /* CustomeView */,
 				104DCF24266AC3D100B85088 /* Storyboards */,
 				104DCF23266AC3CA00B85088 /* Scenes */,
 				104DCF22266AC3C400B85088 /* Resources */,
@@ -224,6 +251,7 @@
 			files = (
 				104DCF07266ABBF900B85088 /* AppDelegate.swift in Sources */,
 				1041B9A9266AD54F00E092CE /* MyNotesCell.swift in Sources */,
+				1041B9DB266AF79F00E092CE /* UIViewController+Ext.swift in Sources */,
 				1041B9A1266ACB2D00E092CE /* NotesListVC+Function.swift in Sources */,
 				104DCF2B266AC72D00B85088 /* NotesListVC.swift in Sources */,
 				104DCF34266AC80900B85088 /* NotesListView.swift in Sources */,

@@ -60,5 +60,11 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Notepad app wants to access your location to add new note ? </string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Notepad app wants to access your location to add new note ? </string>
+	<key>NSCameraUsageDescription</key>
+	<string>Notepad app wants to use the camera to take pictures?</string>
 </dict>
 </plist>
