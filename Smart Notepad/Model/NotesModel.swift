@@ -16,7 +16,5 @@ class NotesModel :Object {
     @objc dynamic var noteTitle = ""
     @objc dynamic var noteBody = ""
     @objc dynamic var notePhoto = ""
-    @objc dynamic var noteTime = ""
-
- 
+    @objc dynamic var noteTime = Date()
 }
