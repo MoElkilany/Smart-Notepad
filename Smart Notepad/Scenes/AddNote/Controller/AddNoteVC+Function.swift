@@ -7,16 +7,42 @@
 
 import UIKit
 import CoreLocation
+import PhotosUI
 
 extension AddNoteVC{
     
     func viewDidLoadactivity(){
         setUpView()
         actionButton()
+        photoAccess()
+        locationAuthorization()
+    }
+    
+    func photoAccess(){
+        PHPhotoLibrary.requestAuthorization(for: .readWrite) { [unowned self] (Authorization) in
+            DispatchQueue.main.async { [unowned self] in
+                userPhotoAuthorization(Authorization)
+            }
+        }
+    }
+    
+    func userPhotoAuthorization(_ Authorization: PHAuthorizationStatus) {
+        switch Authorization {
+        case .authorized:
+         print("authorized")
+            isUserAccessPhoto = true
+        case .denied,.restricted,.notDetermined:
+            print("denied")
+            isUserAccessPhoto = false
+         default:
+            break
+        }
     }
     
     
     func setUpView(){
+        mainView.addPhotoBtn.isHidden = false
+        mainView.imageSelected.isHidden = true
         mainView.noteDescriptionTV.delegate = self
         mainView.noteDescriptionTV.text = "Note Body Here"
         mainView.noteDescriptionTV.textColor = UIColor.lightGray
@@ -33,13 +59,15 @@ extension AddNoteVC{
     }
     
     @objc func addNoteBtnTapped(){
+      
         
     }
-    
+
+
     @objc func addLocationBtnTapped(){
      
         if !userLocationPermission() {
-            self.showLocationPermissionAlert()
+            self.showPermissionAlert(title: "Location Permission", message: "Please active your location from Settings ")
         }else{
             mainView.addLocationBtn.setTitle(fullAddress, for: .normal)
             mainView.addLocationBtn.setTitleColor(.black, for: .normal)
@@ -47,7 +75,13 @@ extension AddNoteVC{
     }
     
     @objc func addPhotoBtnTapped(){
-        
+        if !isUserAccessPhoto{
+            self.showPermissionAlert(title: "Photo Permission", message: "Please allow app to access  your Photo to choose from them ")
+
+        }else{
+            Helper.chosseOptionAlert(imagePicker: pickerImage, vc: self)
+
+        }
     }
     
     
@@ -67,6 +101,15 @@ extension AddNoteVC{
             userAcceptPermission = false
         }
         return userAcceptPermission
+    }
+    
+    func locationAuthorization(){
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
     }
     
 }
@@ -124,5 +167,20 @@ extension AddNoteVC : CLLocationManagerDelegate {
                 }
             }
         }
+    }
+}
+
+extension AddNoteVC  : UINavigationControllerDelegate , UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker:
+                                UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let image = info[.originalImage] as? UIImage else {
+            return
+        }
+        mainView.addPhotoBtn.isHidden = true
+        mainView.imageSelected.isHidden = false
+        mainView.imageSelected.image = image
+        self.imageSelected = image
+        dismiss(animated: true , completion: nil)
     }
 }

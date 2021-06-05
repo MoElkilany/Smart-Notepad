@@ -11,10 +11,13 @@ import CoreLocation
 class AddNoteVC: UIViewController {
 
     let locationManager = CLLocationManager()
-    
+    var pickerImage = UIImagePickerController()
+    var imageSelected = UIImage()
     var lat = 0.0
     var lng = 0.0
-    var fullAddress = "" 
+    var fullAddress = ""
+    var isUserAccessPhoto = true
+    
         var mainView: AddNoteView {
         return view as! AddNoteView
     }
