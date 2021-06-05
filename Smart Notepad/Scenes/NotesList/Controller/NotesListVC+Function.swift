@@ -14,10 +14,13 @@ extension NotesListVC {
         setUpView()
         tableConfigration()
         actionButtons()
+        locationAuthorization()
+        hasLocationPermission()
+        
     }
     
     func setUpView(){
-        locationAuthorization()
+       
         mainView.addNoteBtn.layer.cornerRadius = 10
         mainView.addNoteBtn.layer.borderWidth = 1
         mainView.addNoteBtn.layer.borderColor = UIColor.black.cgColor
@@ -37,6 +40,7 @@ extension NotesListVC {
     
     @objc func addNoteBtnTapped(){
         print("")
+        self.navigationController?.pushViewController(AddNoteVC(), animated: true)
     }
     
     func tableConfigration(){
@@ -55,16 +59,39 @@ extension NotesListVC {
             locationManager.startUpdatingLocation()
         }
     }
+    
+    func hasLocationPermission()  {
+       
+        if CLLocationManager.locationServicesEnabled() {
+            switch locationManager.authorizationStatus {
+            case .notDetermined, .restricted, .denied:
+                Helper.userAcceptPermission = false
+                
+            case .authorizedAlways, .authorizedWhenInUse:
+                Helper.userAcceptPermission = true
+             default:
+                    break
+            }
+        } else {
+            Helper.userAcceptPermission = false
+        }
+    }
 }
 
 
 //MARK: NotesListVC LocationManagerDelegate
 extension NotesListVC : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(location.latitude) \(location.longitude)")
-        self.lat = location.latitude
-        self.lng = location.longitude
-        self.locationManager.startUpdatingLocation()
+        guard let location = locations.first else {
+             return
+           }
+        
+        self.lat = location.coordinate.latitude
+        self.lng = location.coordinate.longitude
+                print("locations = \(location.coordinate.latitude) \(location.coordinate.longitude)")
+
+        locationManager.startUpdatingLocation()
     }
+    
 }
+

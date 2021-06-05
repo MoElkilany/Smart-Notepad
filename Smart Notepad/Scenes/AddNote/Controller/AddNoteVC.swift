@@ -6,16 +6,22 @@
 //
 
 import UIKit
+import CoreLocation
 
 class AddNoteVC: UIViewController {
 
-    var mainView: AddNoteView {
+    let locationManager = CLLocationManager()
+    
+    var lat = 0.0
+    var lng = 0.0
+    var fullAddress = "" 
+        var mainView: AddNoteView {
         return view as! AddNoteView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewDidLoadactivity()
     }
-
-
+    
 }

@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import CoreLocation
+
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +24,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
 
+        IQKeyboardManager.shared.enable  = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        hasLocationPermission()
         return true
+    }
+    
+    
+    func hasLocationPermission()  {
+        let locationManager = CLLocationManager()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            switch locationManager.authorizationStatus {
+            
+            case .notDetermined, .restricted, .denied:
+                Helper.userAcceptPermission = false
+                print("hasLocationPermission2 ", Helper.userAcceptPermission)
+            case .authorizedAlways, .authorizedWhenInUse:
+                Helper.userAcceptPermission = true
+                print("hasLocationPermission3", Helper.userAcceptPermission)
+             default:
+                    break
+            }
+        } else {
+            Helper.userAcceptPermission = false
+        }
     }
 
     // MARK: UISceneSession Lifecycle

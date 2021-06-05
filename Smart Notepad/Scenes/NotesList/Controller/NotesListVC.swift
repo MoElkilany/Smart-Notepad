@@ -15,7 +15,6 @@ class NotesListVC: UIViewController {
     var lat = 0.0
     var lng = 0.0
     
-    
     var mainView :NotesListView {
         return view as! NotesListView
     }
@@ -25,6 +24,4 @@ class NotesListVC: UIViewController {
         viewDidLoadActivity()
         title = "Notes"
     }
-    
-
 }

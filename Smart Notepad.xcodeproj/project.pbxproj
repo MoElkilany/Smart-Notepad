@@ -24,6 +24,7 @@
 		10B0B41B266B9626000ABF65 /* AddNoteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B0B419266B9626000ABF65 /* AddNoteVC.xib */; };
 		10B0B41F266B9645000ABF65 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0B41E266B9645000ABF65 /* AddNoteView.swift */; };
 		10B0B424266B9684000ABF65 /* AddNoteVC+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0B423266B9684000ABF65 /* AddNoteVC+Function.swift */; };
+		10B0B42E266BC278000ABF65 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0B42D266BC278000ABF65 /* Helper.swift */; };
 		38C4A764033720362772DB4B /* Pods_Smart_Notepad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C9A2EAB34E5417E3E46623 /* Pods_Smart_Notepad.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		10B0B419266B9626000ABF65 /* AddNoteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteVC.xib; sourceTree = "<group>"; };
 		10B0B41E266B9645000ABF65 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
 		10B0B423266B9684000ABF65 /* AddNoteVC+Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddNoteVC+Function.swift"; sourceTree = "<group>"; };
+		10B0B42D266BC278000ABF65 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		3854D1749C9ECF0480BEA5A7 /* Pods-Smart Notepad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Notepad.debug.xcconfig"; path = "Target Support Files/Pods-Smart Notepad/Pods-Smart Notepad.debug.xcconfig"; sourceTree = "<group>"; };
 		86C9A2EAB34E5417E3E46623 /* Pods_Smart_Notepad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Notepad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 		104DCF05266ABBF900B85088 /* Smart Notepad */ = {
 			isa = PBXGroup;
 			children = (
+				10B0B42B266BC25F000ABF65 /* Helpers */,
 				10258278266B19140062F016 /* Model */,
 				1041B9D8266AF75700E092CE /* Extention */,
 				1041B9D1266AF6E700E092CE /* CustomeView */,
@@ -233,6 +236,14 @@
 				10B0B423266B9684000ABF65 /* AddNoteVC+Function.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		10B0B42B266BC25F000ABF65 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				10B0B42D266BC278000ABF65 /* Helper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		68313ADC650CE5CF85B46063 /* Frameworks */ = {
@@ -378,6 +389,7 @@
 				104DCF34266AC80900B85088 /* NotesListView.swift in Sources */,
 				10B0B424266B9684000ABF65 /* AddNoteVC+Function.swift in Sources */,
 				104DCF09266ABBF900B85088 /* SceneDelegate.swift in Sources */,
+				10B0B42E266BC278000ABF65 /* Helper.swift in Sources */,
 				1025827B266B19E70062F016 /* NotesModel.swift in Sources */,
 				10B0B41F266B9645000ABF65 /* AddNoteView.swift in Sources */,
 			);
@@ -522,7 +534,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZUMG9R88LL;
 				INFOPLIST_FILE = "$(SRCROOT)/Smart Notepad/InfoList/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -543,7 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZUMG9R88LL;
 				INFOPLIST_FILE = "$(SRCROOT)/Smart Notepad/InfoList/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
