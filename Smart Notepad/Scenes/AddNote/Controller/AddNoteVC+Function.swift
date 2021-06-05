@@ -160,7 +160,7 @@ extension AddNoteVC{
         realm.beginWrite()
         realm.add(myNotes)
         try! realm.commitWrite()
-
+        self.navigationController?.popViewController(animated: true)
     }
     
     
