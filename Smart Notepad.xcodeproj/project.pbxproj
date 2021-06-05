@@ -20,6 +20,10 @@
 		104DCF2B266AC72D00B85088 /* NotesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF29266AC72D00B85088 /* NotesListVC.swift */; };
 		104DCF2C266AC72D00B85088 /* NotesListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104DCF2A266AC72D00B85088 /* NotesListVC.xib */; };
 		104DCF34266AC80900B85088 /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DCF33266AC80900B85088 /* NotesListView.swift */; };
+		10B0B41A266B9626000ABF65 /* AddNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0B418266B9626000ABF65 /* AddNoteVC.swift */; };
+		10B0B41B266B9626000ABF65 /* AddNoteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10B0B419266B9626000ABF65 /* AddNoteVC.xib */; };
+		10B0B41F266B9645000ABF65 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0B41E266B9645000ABF65 /* AddNoteView.swift */; };
+		10B0B424266B9684000ABF65 /* AddNoteVC+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0B423266B9684000ABF65 /* AddNoteVC+Function.swift */; };
 		38C4A764033720362772DB4B /* Pods_Smart_Notepad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C9A2EAB34E5417E3E46623 /* Pods_Smart_Notepad.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +44,10 @@
 		104DCF29266AC72D00B85088 /* NotesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListVC.swift; sourceTree = "<group>"; };
 		104DCF2A266AC72D00B85088 /* NotesListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesListVC.xib; sourceTree = "<group>"; };
 		104DCF33266AC80900B85088 /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
+		10B0B418266B9626000ABF65 /* AddNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteVC.swift; sourceTree = "<group>"; };
+		10B0B419266B9626000ABF65 /* AddNoteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoteVC.xib; sourceTree = "<group>"; };
+		10B0B41E266B9645000ABF65 /* AddNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
+		10B0B423266B9684000ABF65 /* AddNoteVC+Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddNoteVC+Function.swift"; sourceTree = "<group>"; };
 		3854D1749C9ECF0480BEA5A7 /* Pods-Smart Notepad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Notepad.debug.xcconfig"; path = "Target Support Files/Pods-Smart Notepad/Pods-Smart Notepad.debug.xcconfig"; sourceTree = "<group>"; };
 		86C9A2EAB34E5417E3E46623 /* Pods_Smart_Notepad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Notepad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -157,6 +165,7 @@
 		104DCF23266AC3CA00B85088 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				10B0B415266B95F3000ABF65 /* AddNote */,
 				104DCF28266AC6FE00B85088 /* NotesList */,
 			);
 			path = Scenes;
@@ -195,6 +204,33 @@
 				104DCF29266AC72D00B85088 /* NotesListVC.swift */,
 				1041B9A0266ACB2D00E092CE /* NotesListVC+Function.swift */,
 				1041B9DF266AFAE700E092CE /* NotesListVC + TableView.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		10B0B415266B95F3000ABF65 /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				10B0B417266B9602000ABF65 /* Controller */,
+				10B0B416266B95FD000ABF65 /* View */,
+			);
+			path = AddNote;
+			sourceTree = "<group>";
+		};
+		10B0B416266B95FD000ABF65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10B0B41E266B9645000ABF65 /* AddNoteView.swift */,
+				10B0B419266B9626000ABF65 /* AddNoteVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		10B0B417266B9602000ABF65 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				10B0B418266B9626000ABF65 /* AddNoteVC.swift */,
+				10B0B423266B9684000ABF65 /* AddNoteVC+Function.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -278,6 +314,7 @@
 				104DCF13266ABBFA00B85088 /* LaunchScreen.storyboard in Resources */,
 				104DCF2C266AC72D00B85088 /* NotesListVC.xib in Resources */,
 				104DCF10266ABBFA00B85088 /* Assets.xcassets in Resources */,
+				10B0B41B266B9626000ABF65 /* AddNoteVC.xib in Resources */,
 				1041B9AA266AD54F00E092CE /* MyNotesCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,13 +370,16 @@
 			files = (
 				104DCF07266ABBF900B85088 /* AppDelegate.swift in Sources */,
 				1041B9A9266AD54F00E092CE /* MyNotesCell.swift in Sources */,
+				10B0B41A266B9626000ABF65 /* AddNoteVC.swift in Sources */,
 				1041B9DB266AF79F00E092CE /* UIViewController+Ext.swift in Sources */,
 				1041B9A1266ACB2D00E092CE /* NotesListVC+Function.swift in Sources */,
 				1041B9E0266AFAE700E092CE /* NotesListVC + TableView.swift in Sources */,
 				104DCF2B266AC72D00B85088 /* NotesListVC.swift in Sources */,
 				104DCF34266AC80900B85088 /* NotesListView.swift in Sources */,
+				10B0B424266B9684000ABF65 /* AddNoteVC+Function.swift in Sources */,
 				104DCF09266ABBF900B85088 /* SceneDelegate.swift in Sources */,
 				1025827B266B19E70062F016 /* NotesModel.swift in Sources */,
+				10B0B41F266B9645000ABF65 /* AddNoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
