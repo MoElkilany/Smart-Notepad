@@ -26,10 +26,5 @@ class NotesListVC: UIViewController {
         title = "Notes"
     }
     
-//    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//    
-//       
-//    }
+
 }

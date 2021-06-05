@@ -13,17 +13,30 @@ extension NotesListVC {
     func viewDidLoadActivity(){
         setUpView()
         tableConfigration()
+        actionButtons()
     }
     
     func setUpView(){
         locationAuthorization()
-        
-     
-        
-        
         mainView.addNoteBtn.layer.cornerRadius = 10
         mainView.addNoteBtn.layer.borderWidth = 1
         mainView.addNoteBtn.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    func actionButtons(){
+        addNoteNavgationButton()
+        mainView.addNoteBtn.addTarget(self, action: #selector(addNoteBtnTapped), for: .touchUpInside)
+    }
+    
+    
+    func addNoteNavgationButton(){
+        let addNoteNavgationBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNoteBtnTapped))
+        navigationItem.rightBarButtonItem = addNoteNavgationBtn
+    }
+    
+    
+    @objc func addNoteBtnTapped(){
+        print("")
     }
     
     func tableConfigration(){
@@ -42,19 +55,16 @@ extension NotesListVC {
             locationManager.startUpdatingLocation()
         }
     }
-    
 }
 
 
-
+//MARK: NotesListVC LocationManagerDelegate
 extension NotesListVC : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(location.latitude) \(location.longitude)")
-
         self.lat = location.latitude
         self.lng = location.longitude
         self.locationManager.startUpdatingLocation()
     }
-    
 }
