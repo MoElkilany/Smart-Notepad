@@ -19,16 +19,22 @@ class NotesListVC: UIViewController {
     var lng = 0.0
     let realm = try! Realm()
     var myNotes:Results<NotesModel>!
-
+    
     var mainView :NotesListView {
         return view as! NotesListView
     }
+    
+    var  sortedDescendingNotesBasedOnTime = [NotesModel](){
+                didSet{
+                    mainView.myNotesTable.reloadData()
+            }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Realm File" , Realm.Configuration.defaultConfiguration.fileURL!)
         viewDidLoadActivity()
-        title = "Notes"
     }
     
     override func viewWillAppear(_ animated: Bool) {

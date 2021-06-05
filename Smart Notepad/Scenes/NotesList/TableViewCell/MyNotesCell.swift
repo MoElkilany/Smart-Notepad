@@ -21,10 +21,14 @@ class MyNotesCell: UITableViewCell {
         nearestLab.isHidden = true
     }
     
-    func setUpCellData(model:NotesModel){
+    func setUpCellData(model:NotesModel,index:IndexPath){
+        
+        if index.row == 0 {
+            
+            nearestLab.isHidden = false
+        }
         noteTitleLab.text = model.noteTitle
         noteBodyLab.text = model.noteBody
-//        noteTitleLab.text = model.noteTitle
     }
     
 }

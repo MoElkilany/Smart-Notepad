@@ -9,13 +9,13 @@ import UIKit
 
 extension NotesListVC: UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myNotes.count
+        return sortedDescendingNotesBasedOnTime.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyNotesCell.cellID, for: indexPath) as!  MyNotesCell
-        cell.setUpCellData(model: myNotes[indexPath.item])
+        cell.setUpCellData(model: sortedDescendingNotesBasedOnTime[indexPath.item], index: indexPath)
         return cell
         
     }
@@ -35,7 +35,7 @@ extension NotesListVC: UITableViewDelegate , UITableViewDataSource {
             print("delete")
             
                 self.realm.beginWrite()
-                 self.realm.delete(self.myNotes[indexPath.item])
+                 self.realm.delete(self.sortedDescendingNotesBasedOnTime[indexPath.item])
                 try! self.realm.commitWrite()
             self.mainView.myNotesTable.reloadData()
             
@@ -48,10 +48,8 @@ extension NotesListVC: UITableViewDelegate , UITableViewDataSource {
         
         
         let editItem = UIContextualAction(style: .normal, title: "Edit") {  (contextualAction, view, boolValue) in
-            view.backgroundColor = .blue
-            contextualAction.backgroundColor = .blue
-            
-            
+        
+            let vc = 
             
             print("edit")
         }

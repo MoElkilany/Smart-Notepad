@@ -16,14 +16,17 @@ extension NotesListVC {
         actionButtons()
         locationAuthorization()
         hasLocationPermission()
-        
     }
     
+    func sortNote(){
+    //MARK: All other notes should be sorted by creation time in descending order.
+        sortedDescendingNotesBasedOnTime = myNotes.sorted(by: { $0.noteTime > $1.noteTime })
+    }
     
 func getMyNotesFromRealmData(){
     do {
         myNotes =  realm.objects(NotesModel.self)
-        mainView.myNotesTable.reloadData()
+        sortNote()
         if myNotes.isEmpty {
             mainView.addNoteStack.isHidden = false
             mainView.myNotesTable.isHidden = true
@@ -36,7 +39,7 @@ func getMyNotesFromRealmData(){
     
     
     func setUpView(){
-       
+        title = "Notes"
         mainView.addNoteBtn.layer.cornerRadius = 10
         mainView.addNoteBtn.layer.borderWidth = 1
         mainView.addNoteBtn.layer.borderColor = UIColor.black.cgColor
@@ -47,7 +50,6 @@ func getMyNotesFromRealmData(){
         mainView.addNoteBtn.addTarget(self, action: #selector(addNoteBtnTapped), for: .touchUpInside)
     }
     
-    
     func addNoteNavgationButton(){
         let addNoteNavgationBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNoteBtnTapped))
         navigationItem.rightBarButtonItem = addNoteNavgationBtn
@@ -55,7 +57,6 @@ func getMyNotesFromRealmData(){
     
     
     @objc func addNoteBtnTapped(){
-        print("")
         self.navigationController?.pushViewController(AddNoteVC(), animated: true)
     }
     
@@ -94,7 +95,6 @@ func getMyNotesFromRealmData(){
     }
 }
 
-
 //MARK: NotesListVC LocationManagerDelegate
 extension NotesListVC : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -105,9 +105,7 @@ extension NotesListVC : CLLocationManagerDelegate {
         self.lat = location.coordinate.latitude
         self.lng = location.coordinate.longitude
                 print("locations = \(location.coordinate.latitude) \(location.coordinate.longitude)")
-
         locationManager.startUpdatingLocation()
     }
-    
 }
 
