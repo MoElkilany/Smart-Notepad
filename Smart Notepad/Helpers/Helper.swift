@@ -10,7 +10,6 @@ import UIKit
 class Helper {
     
     static var  userAcceptPermission = false
-    
     static let shared = Helper()
     
   static  func chosseOptionAlert(imagePicker:UIImagePickerController, vc:UIViewController){
